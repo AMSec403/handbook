@@ -1,0 +1,76 @@
+# Cisco IOS Cheatsheet
+
+## 🎯 Propósito
+Referencia completa de comandos esenciales para administración de routers y switches Cisco.
+
+---
+
+## 📂 Modos de operación
+- `enable` → entrar a modo privilegiado
+- `configure terminal` → entrar a modo de configuración global
+- `exit` → salir de un modo
+- `write memory` / `copy running-config startup-config` → guardar configuración
+
+---
+
+## 👤 Gestión de usuarios
+- `username admin privilege 15 secret clave` → crear usuario con privilegios
+- `enable secret clave` → configurar contraseña de modo privilegiado
+- `line vty 0 4` → configurar acceso remoto (Telnet/SSH)
+- `password clave` → asignar contraseña a línea
+- `login` → habilitar autenticación en línea
+
+---
+
+## ⚙️ Configuración básica
+- `hostname R1` → asignar nombre al dispositivo
+- `banner motd # Mensaje #` → configurar mensaje de bienvenida
+- `clock set HH:MM:SS DAY MONTH YEAR` → configurar hora y fecha
+
+---
+
+## 🌐 Interfaces y red
+- `interface GigabitEthernet0/0` → entrar a configuración de interfaz
+- `ip address 192.168.1.1 255.255.255.0` → asignar IP
+- `no shutdown` → habilitar interfaz
+- `show ip interface brief` → ver estado de interfaces
+- `ping 192.168.1.2` → probar conectividad
+- `traceroute 8.8.8.8` → rastrear ruta
+
+---
+
+## 🔀 Routing
+- `ip route 0.0.0.0 0.0.0.0 192.168.1.254` → ruta estática por defecto
+- `router ospf 1` → habilitar OSPF
+- `network 192.168.1.0 0.0.0.255 area 0` → anunciar red en OSPF
+- `router eigrp 100` → habilitar EIGRP
+- `network 10.0.0.0 0.0.0.255` → anunciar red en EIGRP
+- `show ip route` → tabla de enrutamiento
+
+---
+
+## 🔒 Seguridad
+- `access-list 10 permit 192.168.1.0 0.0.0.255` → ACL estándar
+- `access-list 100 deny tcp any any eq 23` → ACL extendida (bloquear Telnet)
+- `ip access-group 100 in` → aplicar ACL a interfaz
+- `service password-encryption` → encriptar contraseñas en configuración
+
+---
+
+## 🕒 Monitoreo y diagnóstico
+- `show running-config` → configuración actual
+- `show startup-config` → configuración guardada
+- `show version` → versión de IOS y hardware
+- `show processes` → procesos activos
+- `show logging` → ver logs
+- `debug ip packet` → depuración de tráfico IP
+- `undebug all` → detener depuración
+
+---
+
+## 🧹 Tips de experto
+- Siempre usar `no shutdown` al configurar interfaces, por defecto están deshabilitadas.  
+- Guarda cambios con `copy running-config startup-config` para evitar perder configuración al reiniciar.  
+- Usa `show ip interface brief` como comando rápido de diagnóstico.  
+- Documenta ACLs y políticas de seguridad para evitar bloqueos accidentales.  
+- En producción, evita abusar de `debug` porque puede impactar el rendimiento.  

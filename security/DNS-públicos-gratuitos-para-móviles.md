@@ -1,4 +1,4 @@
-# 🚀 DNS para Android
+# 🚀 DNS públicos gratuitos para móviles
 
 Listado de DNS seguros y gratuitos que bloquean anuncios, rastreadores y ofrecen perfiles de seguridad.  
 Todos soportan **DoH/DoT** y se configuran en Android desde **Configuración → Red e Internet → DNS privado**.

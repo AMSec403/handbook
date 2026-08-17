@@ -1,0 +1,9 @@
+# Ignorar archivos innecesarios de la interfaz de Obsidian
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/graph.json
+.obsidian/plugins/hotkeys.json
+
+# Ignorar archivos basura del sistema operativo
+.DS_Store
+Thumbs.db

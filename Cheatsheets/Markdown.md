@@ -75,10 +75,12 @@ Sintaxis para copiar:
 > [!TODO]
 > Tareas pendientes: Puedes incluir casillas de verificación aquí dentro.
 > - [ ] Tarea por hacer.
+> - [ ] Tarea por hacer.
 ```
 Resultado visual:
 > [!TODO]
 > Tareas pendientes: Puedes incluir casillas de verificación aquí dentro.
+> - [x] Tarea por hacer.
 > - [ ] Tarea por hacer.
 
 ---

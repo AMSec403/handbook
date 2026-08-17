@@ -74,7 +74,7 @@ Sintaxis para copiar:
 ```text
 > [!TODO]
 > Tareas pendientes: Puedes incluir casillas de verificación aquí dentro.
-> - [ ] Tarea por hacer.
+> - [x] Tarea por hacer.
 > - [ ] Tarea por hacer.
 ```
 Resultado visual:

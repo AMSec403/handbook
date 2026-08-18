@@ -1,5 +1,3 @@
-# Markdown
-
 ### Ventanas de Alerta y Estado (Callouts)
 
 Sintaxis para copiar:

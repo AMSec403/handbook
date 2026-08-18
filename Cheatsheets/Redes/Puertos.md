@@ -1,3 +1,5 @@
+# Puertos
+
 Los puertos de red (capa 4 del modelo OSI) permiten identificar los diferentes servicios o aplicaciones que viajan a traves de una conexion. Existen 65,535 puertos disponibles en total, divididos en tres grandes clasificaciones oficiales por la IANA (Internet Assigned Numbers Authority).
 
 ### Clasificacion Oficial de los Puertos

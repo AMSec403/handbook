@@ -1,3 +1,4 @@
+# Métricas y distancias administrativas
 ## METRICAS (Calidad del Camino)
 
 El Costo o Metrica define que tan eficiente es un camino dentro de una misma tecnologia. Criterio: El valor mas BAJO siempre gana.

@@ -1,3 +1,4 @@
+# Rangos de IPs Publicas y Privadas
 ## Rango de direcciones IP públicas
 
 ·         Clase A: 1.0.0.0 a 126.255.255.255

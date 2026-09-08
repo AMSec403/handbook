@@ -1,0 +1,65 @@
+services:
+  db:
+    image: mariadb:10.11
+    container_name: librenms_db
+    command:
+      - --innodb-file-per-table=1
+      - --lower-case-table-names=1
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - ./db:/var/lib/mysql
+    environment:
+      - MARIADB_RANDOM_ROOT_PASSWORD=yes
+      - MARIADB_DATABASE=librenms
+      - MARIADB_USER=librenms
+      - MARIADB_PASSWORD=pwddblibrenms # <--- 1. Aquí
+    restart: always
+
+  redis:
+    image: redis:7.2-alpine
+    container_name: librenms_redis
+    restart: always
+
+  librenms:
+    image: librenms/librenms:latest
+    container_name: librenms
+    ports:
+      - "8100:8000"
+    volumes:
+      - ./librenms:/data
+    environment:
+      - TZ=America/Mexico_City
+      - PUID=1000
+      - PGID=1000
+      - DB_HOST=db
+      - DB_NAME=librenms
+      - DB_USER=librenms
+      - DB_PASSWORD=pwddblibrenms # <--- 2. Aquí (Con el nombre correcto 'DB_PASSWORD')
+      - BASE_URL=http://localhost:8000
+      - SIDE_CAR=0
+    depends_on:
+      - db
+      - redis
+    restart: always
+
+  dispatcher:
+    image: librenms/librenms:latest
+    container_name: librenms_dispatcher
+    volumes:
+      - ./librenms:/data
+    environment:
+      - TZ=America/Mexico_City
+      - PUID=1000
+      - PGID=1000
+      - DB_HOST=db
+      - DB_NAME=librenms
+      - DB_USER=librenms
+      - DB_PASSWORD=pwddblibrenms # <--- 3. Aquí (Con el nombre correcto 'DB_PASSWORD')
+      - SIDE_CAR=1
+      - DISPATCHER_NODE_ID=dispatcher1
+    depends_on:
+      - db
+      - redis
+    restart: always
+
